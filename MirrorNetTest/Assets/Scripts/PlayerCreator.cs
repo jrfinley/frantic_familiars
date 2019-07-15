@@ -13,6 +13,7 @@ public class PlayerCreator : MonoBehaviour {
     public SpriteRenderer[] icons;
     public PlayerTemplate[] playerStorage;
     public bool[] Ready;
+    public string GameSceneName = "GameLevel";
 
     bool OneUsed = false;
     bool TwoUsed = false;
@@ -159,7 +160,7 @@ public class PlayerCreator : MonoBehaviour {
         if (readies >= playerNum)
         {
             print("Entering Next Level");
-            SceneManager.LoadScene("Clinic");
+            SceneManager.LoadScene(GameSceneName);
         }
     }
 }

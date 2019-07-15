@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Name: Player2
   m_EditorClassIdentifier: 
   ControllerNum: 0
+  Used: 1
+  speed: 15
