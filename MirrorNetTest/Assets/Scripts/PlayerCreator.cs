@@ -23,6 +23,7 @@ public class PlayerCreator : MonoBehaviour {
     void Start () {
      
         players[0] = -1; players[1] = -1; players[2] = -1; players[3] = -1;
+        playerStorage[0].Used = false; playerStorage[1].Used = false; playerStorage[2].Used = false; playerStorage[3].Used = false;
     }
 	
 	// Update is called once per frame

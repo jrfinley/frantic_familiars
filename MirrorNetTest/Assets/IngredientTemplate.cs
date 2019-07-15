@@ -11,4 +11,11 @@ public class IngredientTemplate : ScriptableObject {
     public bool hot;
     public bool cold;
     public bool magic;
+    public bool warding;
+    public bool holy;
+    public bool evil;
+    public bool soothing;
+    public bool frightening;
+    public bool soft;
+    public bool hard;
 }
