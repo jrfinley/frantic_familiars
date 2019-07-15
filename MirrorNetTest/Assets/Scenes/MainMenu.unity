@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764bff673fe260942b029317eeb6ffcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuReady: {fileID: 21300000, guid: 28b87b18ad03aa34ea98a9e7d58f50de, type: 3}
+  MenuNotReady: {fileID: 21300000, guid: aebe663b47c79b94a829e064272c3a1a, type: 3}
   icons:
   - {fileID: 2048157822}
   - {fileID: 1883333833}
@@ -163,6 +165,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c07d579e553ab541be859bd3af48fcb, type: 2}
   - {fileID: 11400000, guid: 8f60226f211525d418b4fed0ce4b2a30, type: 2}
   - {fileID: 11400000, guid: b2bcbb5a39929844490794e287718d71, type: 2}
+  Ready: 00000000
 --- !u!1 &1386092670
 GameObject:
   m_ObjectHideFlags: 0
