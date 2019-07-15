@@ -159,7 +159,7 @@ public class PlayerCreator : MonoBehaviour {
         if (readies >= playerNum)
         {
             print("Entering Next Level");
-            SceneManager.LoadScene("GameLevel");
+            SceneManager.LoadScene("Clinic");
         }
     }
 }
