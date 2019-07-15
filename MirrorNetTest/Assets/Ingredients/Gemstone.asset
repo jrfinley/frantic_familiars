@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Gemstone
   m_EditorClassIdentifier: 
   name: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 624ee0accd6ae534b823f63f5182d941, type: 3}
   hot: 0
   cold: 1
   magic: 0

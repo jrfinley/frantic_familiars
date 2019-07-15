@@ -166,6 +166,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8f60226f211525d418b4fed0ce4b2a30, type: 2}
   - {fileID: 11400000, guid: b2bcbb5a39929844490794e287718d71, type: 2}
   Ready: 00000000
+  GameSceneName: Clinic
 --- !u!1 &1386092670
 GameObject:
   m_ObjectHideFlags: 0
