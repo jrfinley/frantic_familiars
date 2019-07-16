@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
                     heldObject.transform.parent = null;
                     heldObject.GetComponent<Rigidbody2D>().AddForce(lastDirection * 500);
-                    print(lastDirection * 50);
+                
                     heldObject = null;
                 }
             }
