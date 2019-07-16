@@ -7,8 +7,20 @@ public class PotionController : MonoBehaviour {
     float red = 0;
     float green = 0;
     float blue = 0;
-	// Use this for initialization
-	void Start () {
+
+    [Header("Attributes: ")]
+    public bool hot;
+    public bool cold;
+    public bool magic;
+    public bool warding;
+    public bool holy;
+    public bool evil;
+    public bool soothing;
+    public bool frightening;
+    public bool soft;
+    public bool hard;
+    // Use this for initialization
+    void Start () {
 
         int random255 = Random.Range(0,3);
         print(random255);

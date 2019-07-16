@@ -15,8 +15,10 @@ public class NPC : MonoBehaviour {
         {
             displaySlots[i] = display.slots[i];
             int ailNum = Random.Range(0, possibleAilments.Length);
-            ailments[i] = possibleAilments[ailNum].name.Replace("Attribute","");
-            displaySlots[i].sprite = possibleAilments[ailNum];
+           
+                ailments[i] = possibleAilments[ailNum].name.Replace("Attribute", "");
+                displaySlots[i].sprite = possibleAilments[ailNum];
+            
         }
         
    
