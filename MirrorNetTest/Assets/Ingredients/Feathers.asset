@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 735d25522fe560f41a9e75a6bf65022d, type: 3}
+  m_Name: Feathers
+  m_EditorClassIdentifier: 
+  name: 
+  image: {fileID: 21300002, guid: 624ee0accd6ae534b823f63f5182d941, type: 3}
+  hot: 0
+  cold: 1
+  magic: 0
+  warding: 0
+  holy: 0
+  evil: 0
+  soothing: 1
+  frightening: 0
+  soft: 1
+  hard: 0
