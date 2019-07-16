@@ -24,10 +24,18 @@ public class NPCGenerator : MonoBehaviour {
 
     IEnumerator npcConLoop()
     {
-        while (running) { 
+        while (running) {
+
+            for (int i = 0; i < npcLine.Count; i++)
+            {
+                if (npcLine[i] == null)
+                {
+                    npcLine[i] = null;
+                }
+            }
 
         yield return new WaitForSeconds(Random.Range(waitTime, waitTime + (waitTime/2)));
-            if (npcLine.Count < maxNpcs)
+            if (npcLine.Count < maxNpcs | npcLine.Contains(null))
             {
                 foreach (GameObject go in npcLine)
                 {
@@ -35,9 +43,21 @@ public class NPCGenerator : MonoBehaviour {
                 }
                 GameObject newNPC = Instantiate(npcBase,new Vector3(5,0,0) + npcSpawn,new Quaternion(),null);
                 GameObject newDisplay = Instantiate(npcDisplayBase, canvas.transform);
-                newDisplay.GetComponent<RectTransform>().position = newDisplay.GetComponent<RectTransform>().position + new Vector3(0,npcLine.Count * -100,0);
+                
                 newNPC.GetComponent<NPC>().display = newDisplay.GetComponent<NPCDisplay>();
-                npcLine.Add(newNPC);
+
+                for (int i = 0; i < npcLine.Count; i++)
+                {
+                    if (npcLine[i] == null)
+                    {
+                        npcLine[i] = newNPC;
+                        newDisplay.GetComponent<RectTransform>().position = newDisplay.GetComponent<RectTransform>().position + new Vector3(0, i * -100, 0);
+                    }
+                }
+                if (!npcLine.Contains(newNPC)) {
+                    npcLine.Add(newNPC);
+                    newDisplay.GetComponent<RectTransform>().position = newDisplay.GetComponent<RectTransform>().position + new Vector3(0, npcLine.Count * -100, 0);
+                }
                 StartCoroutine(moveToSpawn(newNPC));
                 
             }
@@ -48,8 +68,10 @@ public class NPCGenerator : MonoBehaviour {
     IEnumerator moveDown(GameObject npc) {
         for (int i = 0; i < 60; i++)
         {
-            npc.transform.position = npc.transform.position - new Vector3(0, 0.02f, 0);
-            yield return new WaitForSeconds(.01f);
+            if (npc !=null) {
+                npc.transform.position = npc.transform.position - new Vector3(0, 0.02f, 0);
+                yield return new WaitForSeconds(.01f);
+            }
 
         }
     }

@@ -25,6 +25,11 @@ public class NPC : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (display.bar.fillAmount <= 0)
+        {
+            Destroy(display.gameObject);
+            Destroy(gameObject);
+
+        }
 	}
 }

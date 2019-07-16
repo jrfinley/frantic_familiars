@@ -4,4 +4,5 @@ using UnityEngine;
 
 public class IngredientType : MonoBehaviour {
     public IngredientTemplate ingredient;
+    public Sprite[] icons;
 }
