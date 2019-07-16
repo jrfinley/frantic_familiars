@@ -68,9 +68,7 @@ public class PotionController : MonoBehaviour {
 
         foreach (SpriteRenderer r in gameObject.GetComponentsInChildren<SpriteRenderer>())
         {
-            print(red);
-            print(green);
-            print(blue);
+ 
             r.color = new Color(red, green, blue, 255);
         }
 
