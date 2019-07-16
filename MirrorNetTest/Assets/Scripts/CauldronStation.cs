@@ -9,6 +9,7 @@ public class CauldronStation : MonoBehaviour {
 
     public Sprite empty;
     public Sprite full;
+    public SpriteRenderer Item1Display;
 
     SpriteRenderer render;
 	// Use this for initialization
@@ -35,6 +36,7 @@ public class CauldronStation : MonoBehaviour {
             {
                 item1 = collision.gameObject.GetComponent<IngredientType>().ingredient;
                 render.sprite = full;
+                Item1Display.sprite = item1.image;
                 foreach (ParticleSystem p in gameObject.GetComponentsInChildren<ParticleSystem>())
                 {
                     if (p.gameObject.name != "LightFlashes")
@@ -65,6 +67,7 @@ public class CauldronStation : MonoBehaviour {
 
                 }
                 item1 = null; item2 = null;
+                Item1Display.sprite = null;
             }
         }
     }

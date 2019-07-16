@@ -47,17 +47,18 @@ public class PlayerController : MonoBehaviour
     void OnTriggerStay2D(Collider2D other)
     {
      
-        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), "Joystick" + (template.ControllerNum + 1) + "Button0")))
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), "Joystick" + (template.ControllerNum + 1) + "Button0")) & heldObject == null)
         {
-            if (other.GetComponent<IngredientType>())
+            if (other.GetComponent<IngredientType>() | other.GetComponent<PotionController>())
             {
                 if (other.GetComponent<Rigidbody2D>())
                 {
                     other.GetComponent<Rigidbody2D>().simulated = false;
+                    heldObject = other.gameObject;
+                    other.transform.parent = transform;
+                    heldObject.transform.localPosition = new Vector3(0, .2f, 0);
                 }
-                heldObject = other.gameObject;
-                other.transform.parent = transform;
-                heldObject.transform.localPosition = new Vector3(0, .2f, 0);
+               
             }
         }
 
