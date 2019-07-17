@@ -7,18 +7,38 @@ public class NPC : MonoBehaviour {
     public NPCDisplay display;
     public Sprite[] possibleAilments;
     public Image[] displaySlots = new Image[maxAilments];
-    string[] ailments = new string[maxAilments];
+    public string[] ailments = new string[maxAilments];
 	// Use this for initialization
 	void Start () {
-        
+
+        if (gameObject.GetComponent<ParticleSystem>())
+        {
+            gameObject.GetComponent<ParticleSystem>().Stop();
+
+        }
+
+
+        string ailmentString = "";
         for (int i = 0; i < ailments.Length; i++)
         {
             displaySlots[i] = display.slots[i];
             int ailNum = Random.Range(0, possibleAilments.Length);
            
                 ailments[i] = possibleAilments[ailNum].name.Replace("Attribute", "");
-                displaySlots[i].sprite = possibleAilments[ailNum];
             
+            if (!ailmentString.Contains(ailments[i]))
+            {
+                
+                displaySlots[i].sprite = possibleAilments[ailNum];
+            }
+            else
+            {
+                displaySlots[i].sprite = null;
+                displaySlots[i].color = new Color(0, 0, 0, 0);
+            }
+            ailmentString = ailmentString + ailments[i];
+
+
         }
         
    

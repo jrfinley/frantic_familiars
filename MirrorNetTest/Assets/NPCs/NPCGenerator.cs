@@ -8,6 +8,7 @@ public class NPCGenerator : MonoBehaviour {
     public GameObject npcBase;
     public GameObject npcDisplayBase;
     public Vector3 npcSpawn;
+    public Sprite npcHappy;
     public float waitTime = 8;
     public int maxNpcs;
     public List<GameObject> npcLine = new List<GameObject>();
@@ -21,6 +22,52 @@ public class NPCGenerator : MonoBehaviour {
 	void Update () {
 		
 	}
+
+     void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.GetComponent<PotionController>())
+        {
+          
+            PotionController pCon = collision.gameObject.GetComponent<PotionController>();
+            bool alreadyCured = false;
+            for (int i = 0; i < npcLine.Count; i++)
+            {
+                
+               if (npcLine[i] != null & alreadyCured == false)
+               {
+                    int correct = 0;
+                    for (int x = 0; x < npcLine[i].GetComponent<NPC>().ailments.Length; x++)
+                    {
+                        
+                        
+                        if (npcLine[i] != null)
+                        {
+                            if ((bool)pCon.GetType().GetField(npcLine[i].GetComponent<NPC>().ailments[x].ToLower()).GetValue(pCon))
+                            {
+
+                                correct++;
+                                print(correct);
+                            }
+                        }
+                        if (correct >= 3)
+                        {
+                            StartCoroutine(moveToBack(npcLine[i]));
+                            npcLine[i].GetComponent<SpriteRenderer>().sprite = npcHappy;
+                            npcLine[i].GetComponent<NPC>().enabled = false;
+                            Destroy(npcLine[i].GetComponent<NPC>().display.gameObject);
+                            npcLine[i] = null;
+                            alreadyCured = true;
+
+                        }
+                    }
+                }
+
+
+
+            }
+        }
+    }
+
 
     IEnumerator npcConLoop()
     {
@@ -48,7 +95,7 @@ public class NPCGenerator : MonoBehaviour {
 
                 for (int i = 0; i < npcLine.Count; i++)
                 {
-                    if (npcLine[i] == null)
+                    if (npcLine[i] == null & !npcLine.Contains(newNPC))
                     {
                         npcLine[i] = newNPC;
                         newDisplay.GetComponent<RectTransform>().position = newDisplay.GetComponent<RectTransform>().position + new Vector3(0, i * -100, 0);
@@ -67,7 +114,7 @@ public class NPCGenerator : MonoBehaviour {
     }
 
     IEnumerator moveDown(GameObject npc) {
-        for (int i = 0; i < 60; i++)
+        for (int i = 0; i < 120; i++)
         {
             if (npc !=null) {
                 npc.transform.position = npc.transform.position - new Vector3(0, 0.02f, 0);
@@ -82,12 +129,34 @@ public class NPCGenerator : MonoBehaviour {
     {
         for (int i = 0; i < 400; i++)
         {
-            npc.transform.position = npc.transform.position - new Vector3(.02f, 0, 0);
-            yield return new WaitForSeconds(.01f);
+            if (npc != null)
+            {
+                npc.transform.position = npc.transform.position - new Vector3(.02f, 0, 0);
+                yield return new WaitForSeconds(.01f);
+            }
         }
        
 
     }
-    
+
+    IEnumerator moveToBack(GameObject npc)
+    {
+        StopCoroutine(moveToSpawn(npc));
+        npc.GetComponent<ParticleSystem>().Play();
+        for (int i = 0; i < 400; i++)
+        {
+            if (npc != null)
+            {
+                npc.transform.position = npc.transform.position + new Vector3(.02f, 0, 0);
+                yield return new WaitForSeconds(.01f);
+            }
+        }
+        
+        Destroy(npc);
+
+
+    }
+
+
 
 }
