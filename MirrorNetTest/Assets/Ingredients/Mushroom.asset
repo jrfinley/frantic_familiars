@@ -9,17 +9,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 735d25522fe560f41a9e75a6bf65022d, type: 3}
-  m_Name: Mandrake
+  m_Name: Mushroom
   m_EditorClassIdentifier: 
   name: 
-  image: {fileID: 21300008, guid: 874b44af94e39194b8da0db5869588c2, type: 3}
-  hot: 0
+  image: {fileID: 0}
+  hot: 1
   cold: 0
-  magic: 1
-  warding: 1
-  holy: 1
-  evil: 0
+  magic: 0
+  warding: 0
+  holy: 0
+  evil: 1
   soothing: 0
   frightening: 0
-  soft: 0
+  soft: 1
   hard: 0
