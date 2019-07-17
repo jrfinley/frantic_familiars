@@ -5321,7 +5321,7 @@ MonoBehaviour:
   npcDisplayBase: {fileID: 1302681104496500, guid: 427afb2edf5638f43bdac87356063b52,
     type: 2}
   npcSpawn: {x: 2, y: 0, z: 0}
-  waitTime: 1
+  waitTime: 4
   maxNpcs: 3
   npcLine: []
 --- !u!1 &970089736

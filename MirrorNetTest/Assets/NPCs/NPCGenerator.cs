@@ -55,8 +55,9 @@ public class NPCGenerator : MonoBehaviour {
                     }
                 }
                 if (!npcLine.Contains(newNPC)) {
-                    npcLine.Add(newNPC);
                     newDisplay.GetComponent<RectTransform>().position = newDisplay.GetComponent<RectTransform>().position + new Vector3(0, npcLine.Count * -100, 0);
+                    npcLine.Add(newNPC);
+                    
                 }
                 StartCoroutine(moveToSpawn(newNPC));
                 
