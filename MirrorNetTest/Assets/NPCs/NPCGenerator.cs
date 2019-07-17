@@ -51,6 +51,7 @@ public class NPCGenerator : MonoBehaviour {
                         }
                         if (correct >= 3)
                         {
+                            Destroy(collision.gameObject);
                             StartCoroutine(moveToBack(npcLine[i]));
                             npcLine[i].GetComponent<SpriteRenderer>().sprite = npcHappy;
                             npcLine[i].GetComponent<NPC>().enabled = false;

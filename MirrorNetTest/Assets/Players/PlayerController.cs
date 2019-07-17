@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     GameObject heldObject2 = null;
     public string characterType = "Cat";
 
+
     Vector2 lastDirection;
 
     // Use this for initialization
