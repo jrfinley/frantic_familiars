@@ -11533,11 +11533,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4596922442184592, guid: 6985f76503468b147ba1e96c4f774b27, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.145284
+      value: -15.22
       objectReference: {fileID: 0}
     - target: {fileID: 4596922442184592, guid: 6985f76503468b147ba1e96c4f774b27, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -16.08292
+      value: 3.08
       objectReference: {fileID: 0}
     - target: {fileID: 4596922442184592, guid: 6985f76503468b147ba1e96c4f774b27, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11566,6 +11566,16 @@ Prefab:
     - target: {fileID: 1936686883393358, guid: 6985f76503468b147ba1e96c4f774b27, type: 2}
       propertyPath: m_Name
       value: Skull (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 50902312180134806, guid: 6985f76503468b147ba1e96c4f774b27,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 50902312180134806, guid: 6985f76503468b147ba1e96c4f774b27,
+        type: 2}
+      propertyPath: m_SleepingMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6985f76503468b147ba1e96c4f774b27, type: 2}
@@ -17666,12 +17676,12 @@ Rigidbody2D:
   m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 2
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &700241196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23114,6 +23124,11 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 50087844144194302, guid: 3b71a61cc1cdae54ba3aa23311904a18,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b71a61cc1cdae54ba3aa23311904a18, type: 2}
   m_IsPrefabAsset: 0
@@ -24135,12 +24150,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 9
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1061713672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24156,6 +24171,31 @@ MonoBehaviour:
   icons: []
   attributeDisplay: {fileID: 1815472073576610, guid: 2997d7c31ab3503429f5d256dae0d9d5,
     type: 2}
+--- !u!61 &1061713675
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1061713670}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.15, y: 4.77}
+    newSize: {x: 8.8, y: 12.08}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.15, y: 4.77}
+  m_EdgeRadius: 0
 --- !u!1001 &1065098514
 Prefab:
   m_ObjectHideFlags: 0
@@ -24165,11 +24205,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4138218894856274, guid: 449ecb68f5a681949a14cb110d2f861b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.9
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: 4138218894856274, guid: 449ecb68f5a681949a14cb110d2f861b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 4138218894856274, guid: 449ecb68f5a681949a14cb110d2f861b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -24914,11 +24954,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4878561877111478, guid: beb3643c9d38a9f4b996594d12d78d02, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -14.29
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4878561877111478, guid: beb3643c9d38a9f4b996594d12d78d02, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 11.15
+      value: 9.54
       objectReference: {fileID: 0}
     - target: {fileID: 4878561877111478, guid: beb3643c9d38a9f4b996594d12d78d02, type: 2}
       propertyPath: m_LocalPosition.z
@@ -24985,6 +25025,66 @@ MonoBehaviour:
   ingredient: {fileID: 0}
   icons: []
   attributeDisplay: {fileID: 0}
+--- !u!114 &1144934732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1144934729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2e47b4dd59e4646abcc2488ab6eea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredient: {fileID: 11400000, guid: f2b09bbb3c75b554d995560b55623dd0, type: 2}
+  icons: []
+  attributeDisplay: {fileID: 1815472073576610, guid: 2997d7c31ab3503429f5d256dae0d9d5,
+    type: 2}
+--- !u!61 &1144934733
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1144934729}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.18, y: 3.96}
+    newSize: {x: 2.26, y: 2.23}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.18, y: 3.96}
+  m_EdgeRadius: 0
+--- !u!50 &1144934734
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1144934729}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 6
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1149136213
 GameObject:
   m_ObjectHideFlags: 0
