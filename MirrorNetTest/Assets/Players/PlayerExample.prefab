@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50991691255919748}
   - component: {fileID: 61483025767406466}
   - component: {fileID: 58098182249153606}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: PlayerExample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template: {fileID: 0}
   heldObject: {fileID: 0}
-  characterType: Cat
 --- !u!212 &212359927307968332
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class NPCGenerator : MonoBehaviour {
     public Canvas canvas;
@@ -13,14 +12,9 @@ public class NPCGenerator : MonoBehaviour {
     public float waitTime = 8;
     public int maxNpcs;
     public List<GameObject> npcLine = new List<GameObject>();
-    int deaths = 0;
-    int saves = 0;
-    public TextMeshProUGUI deathScore;
-    public TextMeshProUGUI savesScore;
-    // Use this for initialization
-    void Start () {
-        deathScore.text = "0";
-        savesScore.text = "0";
+    
+	// Use this for initialization
+	void Start () {
         StartCoroutine(npcConLoop());	
 	}
 	
@@ -99,9 +93,6 @@ public class NPCGenerator : MonoBehaviour {
                 GameObject newDisplay = Instantiate(npcDisplayBase, canvas.transform);
                 
                 newNPC.GetComponent<NPC>().display = newDisplay.GetComponent<NPCDisplay>();
-                newNPC.GetComponent<NPC>().deathScore = deathScore;
-               
-
 
                 for (int i = 0; i < npcLine.Count; i++)
                 {
@@ -151,9 +142,6 @@ public class NPCGenerator : MonoBehaviour {
 
     IEnumerator moveToBack(GameObject npc)
     {
-        saves++;
-        savesScore.text = "" + saves;
-        
         StopCoroutine(moveToSpawn(npc));
         npc.GetComponent<ParticleSystem>().Play();
         for (int i = 0; i < 400; i++)
