@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         {
            positions += players[i].transform.position;
         }
-        Vector3 middle = (positions) * 0.5f;
+        Vector3 middle = (positions) / players.Count;
             Camera.main.transform.position = new Vector3(
             middle.x,
             middle.y,
