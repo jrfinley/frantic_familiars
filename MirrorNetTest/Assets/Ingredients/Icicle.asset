@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 735d25522fe560f41a9e75a6bf65022d, type: 3}
-  m_Name: New Ingredient Template
+  m_Name: Icicle
   m_EditorClassIdentifier: 
   name: 
   image: {fileID: 0}
