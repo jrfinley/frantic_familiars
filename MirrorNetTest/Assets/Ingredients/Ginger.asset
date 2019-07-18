@@ -13,13 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   image: {fileID: 0}
-  hot: 0
+  hot: 1
   cold: 0
   magic: 0
-  warding: 0
+  warding: 1
   holy: 0
   evil: 0
   soothing: 0
   frightening: 0
   soft: 0
-  hard: 0
+  hard: 1
