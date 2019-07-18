@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dffd5932ee03f240864c0029f274095, type: 3}
   m_Name: Player4
   m_EditorClassIdentifier: 
-  ControllerNum: 2
+  ControllerNum: 1
   Used: 1
-  speed: 15
+  speed: 30
+  playerType: golem

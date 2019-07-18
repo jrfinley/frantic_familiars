@@ -6,6 +6,7 @@ public class IngredientType : MonoBehaviour {
     public IngredientTemplate ingredient;
     public Sprite[] icons;
     public GameObject attributeDisplay;
+    public bool hasBeenThrown;
 
     void Start()
     {

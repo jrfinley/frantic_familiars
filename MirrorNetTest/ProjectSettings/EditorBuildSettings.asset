@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/levelstuff/Scenes/Clinic.unity
     guid: 368b634c55215534d850c13dedc0bfdf
+  - enabled: 1
+    path: Assets/Scenes/Clinic2.unity
+    guid: 16249a37c924835499cc6a78716b0ee8
   m_configObjects: {}

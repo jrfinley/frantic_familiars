@@ -7,4 +7,5 @@ public class PlayerTemplate : ScriptableObject {
     public int ControllerNum;
     public bool Used;
     public int speed = 5;
+    public string playerType;
 }

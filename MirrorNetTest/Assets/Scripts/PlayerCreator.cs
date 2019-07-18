@@ -14,57 +14,156 @@ public class PlayerCreator : MonoBehaviour {
     public PlayerTemplate[] playerStorage;
     public bool[] Ready;
     public string GameSceneName = "GameLevel";
+    public string[] playerTypes;
+    [Header("Sprites")]
+    public Sprite cat;
+    public Sprite toad;
+    public Sprite golem;
+    public SpriteRenderer[] renderers;
 
     bool OneUsed = false;
     bool TwoUsed = false;
     bool ThreeUsed = false;
     bool FourUsed = false;
     // Use this for initialization
-    void Start () {
-     
+    void Start() {
+        for (int i = 0; i < playerStorage.Length; i++)
+        {
+            playerStorage[i].playerType = "cat";
+        }
         players[0] = -1; players[1] = -1; players[2] = -1; players[3] = -1;
         playerStorage[0].Used = false; playerStorage[1].Used = false; playerStorage[2].Used = false; playerStorage[3].Used = false;
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-    
+    // Update is called once per frame
+    void Update() {
 
-            if (OneUsed | TwoUsed | ThreeUsed | FourUsed)
+
+
+        if (OneUsed | TwoUsed | ThreeUsed | FourUsed)
+        {
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
-                if (Input.GetKeyDown(KeyCode.Joystick1Button0))
-                {
-
-                    switchActiveState(0);
-                    // icons[i].gameObject.SetActive(true);
-
-
-                }
-                if (Input.GetKeyDown(KeyCode.Joystick2Button0))
-                {
-                    switchActiveState(1);
-
-                    //   icons[i].gameObject.SetActive(true);
-
-                }
-                if (Input.GetKeyDown(KeyCode.Joystick3Button0))
-                {
-                    switchActiveState(2);
-
-                    //  icons[i].gameObject.SetActive(true);
-
-                }
-                if (Input.GetKeyDown(KeyCode.Joystick4Button0))
-                {
-                    switchActiveState(3);
-
-                    // icons[i].gameObject.SetActive(true);
-
-                }
-
+                switchActiveState(0);
 
             }
+            if (Input.GetKeyDown(KeyCode.Joystick2Button0))
+            {
+                switchActiveState(1);
+
+            }
+            if (Input.GetKeyDown(KeyCode.Joystick3Button0))
+            {
+                switchActiveState(2);
+
+            }
+            if (Input.GetKeyDown(KeyCode.Joystick4Button0))
+            {
+                switchActiveState(3);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+            {
+                for (int i = 0; i < playerStorage.Length; i++)
+                {
+                    if (playerStorage[i].ControllerNum == 0)
+                    {
+                        if (playerStorage[i].playerType == "cat") {
+                            playerStorage[i].playerType = "golem";
+                            renderers[i].sprite = golem;
+                        }
+                        else if (playerStorage[i].playerType == "golem")
+                        {
+                            playerStorage[i].playerType = "toad";
+                            renderers[i].sprite = toad;
+                        }
+                        else if (playerStorage[i].playerType == "toad")
+                        {
+                            playerStorage[i].playerType = "cat";
+                            renderers[i].sprite = cat;
+                        }
+                    }
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Joystick2Button3))
+            {
+                for (int i = 0; i < playerStorage.Length; i++)
+                {
+                    if (playerStorage[i].ControllerNum == 1)
+                    {
+                        if (playerStorage[i].playerType == "cat")
+                        {
+                            playerStorage[i].playerType = "golem";
+                            renderers[i].sprite = golem;
+                        }
+                        else if (playerStorage[i].playerType == "golem")
+                        {
+                            playerStorage[i].playerType = "toad";
+                            renderers[i].sprite = toad;
+                        }
+                        else if (playerStorage[i].playerType == "toad")
+                        {
+                            playerStorage[i].playerType = "cat";
+                            renderers[i].sprite = cat;
+                        }
+                    }
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Joystick3Button3))
+            {
+                for (int i = 0; i < playerStorage.Length; i++)
+                {
+                    if (playerStorage[i].ControllerNum == 2)
+                    {
+                        if (playerStorage[i].playerType == "cat")
+                        {
+                            playerStorage[i].playerType = "golem";
+                            renderers[i].sprite = golem;
+                        }
+                        else if (playerStorage[i].playerType == "golem")
+                        {
+                            playerStorage[i].playerType = "toad";
+                            renderers[i].sprite = toad;
+                        }
+                        else if (playerStorage[i].playerType == "toad")
+                        {
+                            playerStorage[i].playerType = "cat";
+                            renderers[i].sprite = cat;
+                        }
+                    }
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Joystick4Button3))
+            {
+                for (int i = 0; i < playerStorage.Length; i++)
+                {
+                    if (playerStorage[i].ControllerNum == 3)
+                    {
+                        if (playerStorage[i].playerType == "cat")
+                        {
+                            playerStorage[i].playerType = "golem";
+                            renderers[i].sprite = golem;
+                        }
+                        else if (playerStorage[i].playerType == "golem")
+                        {
+                            playerStorage[i].playerType = "toad";
+                            renderers[i].sprite = toad;
+                        }
+                        else if (playerStorage[i].playerType == "toad")
+                        {
+                            playerStorage[i].playerType = "cat";
+                            renderers[i].sprite = cat;
+                        }
+                    }
+                }
+            }
+        }
+    
+            
+        
+    
+        
 
         if (i < players.Length)
         {
@@ -77,6 +176,7 @@ public class PlayerCreator : MonoBehaviour {
                 playerStorage[i].ControllerNum = 0;
                 playerStorage[i].Used = true;
                 icons[i].gameObject.SetActive(true);
+                renderers[i] = icons[i].GetComponentInChildren<SpriteRenderer>();
                 i++;
                 
             }
@@ -87,6 +187,7 @@ public class PlayerCreator : MonoBehaviour {
                 playerStorage[i].ControllerNum = 1;
                 playerStorage[i].Used = true;
                 icons[i].gameObject.SetActive(true);
+                renderers[i] = icons[i].GetComponentInChildren<SpriteRenderer>();
                 i++;
             }
             if (Input.GetKeyDown(KeyCode.Joystick3Button0) && ThreeUsed == false)
@@ -96,6 +197,7 @@ public class PlayerCreator : MonoBehaviour {
                 playerStorage[i].ControllerNum = 2;
                 playerStorage[i].Used = true;
                 icons[i].gameObject.SetActive(true);
+                renderers[i] = icons[i].GetComponentInChildren<SpriteRenderer>();
                 i++;
             }
             if (Input.GetKeyDown(KeyCode.Joystick4Button0) && FourUsed == false)
@@ -105,6 +207,7 @@ public class PlayerCreator : MonoBehaviour {
                 playerStorage[i].ControllerNum = 3;
                 playerStorage[i].Used = true;
                 icons[i].gameObject.SetActive(true);
+                renderers[i] = icons[i].GetComponentInChildren<SpriteRenderer>();
                 i++;
             }
 
@@ -112,6 +215,7 @@ public class PlayerCreator : MonoBehaviour {
 
         }
     }
+    
 
     void switchActiveState(int conNum)
     {

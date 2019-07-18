@@ -9,33 +9,51 @@ public class PlayerController : MonoBehaviour
     GameObject heldObject2 = null;
     public string characterType = "Cat";
 
+    public Sprite cat;
+    public Sprite golem;
+    public Sprite toad;
 
     Vector2 lastDirection;
 
     // Use this for initialization
     void Start()
     {
-
+        characterType = template.playerType;
+        if (characterType == "cat")
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = cat;
+        }
+        if (characterType == "golem")
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = golem;
+        }
+        if (characterType == "toad")
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = toad;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (characterType == "Cat" | characterType == "Golem" | characterType == "Toad") {
+        if (characterType == "cat" | characterType == "golem" | characterType == "toad") {
             if (Mathf.Abs(Input.GetAxis("Joy" + template.ControllerNum + "X")) > 0.2 || Mathf.Abs(Input.GetAxis("Joy" + template.ControllerNum + "Y")) > 0.2)
             {
-                if (characterType == "Cat" | characterType == "Golem")
+                if (characterType != "toad")
                 {
                     gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Input.GetAxis("Joy" + template.ControllerNum + "X") * template.speed, -Input.GetAxis("Joy" + template.ControllerNum + "Y") * template.speed));
+                } else if (characterType == "toad")
+                {
+                    gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Input.GetAxis("Joy" + template.ControllerNum + "X") * template.speed / 10, -Input.GetAxis("Joy" + template.ControllerNum + "Y") * template.speed / 10));
                 }
                 lastDirection = new Vector2(Input.GetAxis("Joy" + template.ControllerNum + "X"), -Input.GetAxis("Joy" + template.ControllerNum + "Y"));
             }
         }
-        if (characterType == "Toad")
+        if (characterType == "toad")
         {
             if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), "Joystick" + (template.ControllerNum + 1) + "Button2")))
             {
-                gameObject.GetComponent<Rigidbody2D>().AddForce(lastDirection * template.speed * 100);
+                gameObject.GetComponent<Rigidbody2D>().AddForce(lastDirection * template.speed * 50);
             }
         }
 
@@ -78,6 +96,9 @@ public class PlayerController : MonoBehaviour
             {
                 if (other.GetComponent<Rigidbody2D>())
                 {
+                    if (other.GetComponent<IngredientType>()) {
+                        other.GetComponent<IngredientType>().hasBeenThrown = true;
+                    }
                     other.GetComponent<Rigidbody2D>().simulated = false;
                     heldObject = other.gameObject;
                     other.transform.parent = transform;
@@ -85,7 +106,7 @@ public class PlayerController : MonoBehaviour
                 }
 
             }
-        } else if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), "Joystick" + (template.ControllerNum + 1) + "Button0")) & heldObject2 == null & characterType == "Golem")
+        } else if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), "Joystick" + (template.ControllerNum + 1) + "Button0")) & heldObject2 == null & characterType == "golem")
         {
             if (other.GetComponent<IngredientType>() | other.GetComponent<PotionController>())
             {

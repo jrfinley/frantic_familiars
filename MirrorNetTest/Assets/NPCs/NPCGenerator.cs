@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NPCGenerator : MonoBehaviour {
     public Canvas canvas;
@@ -11,7 +12,11 @@ public class NPCGenerator : MonoBehaviour {
     public Sprite npcHappy;
     public float waitTime = 8;
     public int maxNpcs;
+    public ParticleSystem yay;
     public List<GameObject> npcLine = new List<GameObject>();
+
+    public TextMeshProUGUI deaths;
+    public TextMeshProUGUI saves;
     
 	// Use this for initialization
 	void Start () {
@@ -91,7 +96,7 @@ public class NPCGenerator : MonoBehaviour {
                 }
                 GameObject newNPC = Instantiate(npcBase,new Vector3(5,0,0) + npcSpawn,new Quaternion(),null);
                 GameObject newDisplay = Instantiate(npcDisplayBase, canvas.transform);
-                
+                newNPC.GetComponent<NPC>().deaths = deaths;
                 newNPC.GetComponent<NPC>().display = newDisplay.GetComponent<NPCDisplay>();
 
                 for (int i = 0; i < npcLine.Count; i++)
@@ -142,8 +147,10 @@ public class NPCGenerator : MonoBehaviour {
 
     IEnumerator moveToBack(GameObject npc)
     {
+        saves.text = "" + (int.Parse(saves.text) + 1);
         StopCoroutine(moveToSpawn(npc));
         npc.GetComponent<ParticleSystem>().Play();
+        yay.Emit(30);
         for (int i = 0; i < 400; i++)
         {
             if (npc != null)
