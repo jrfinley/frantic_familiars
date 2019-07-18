@@ -36,7 +36,7 @@ public class PlayerCreator : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.Joystick1Button0))
                 {
 
-                     switchActiveState(0);
+                    switchActiveState(0);
                     // icons[i].gameObject.SetActive(true);
 
 
@@ -61,11 +61,6 @@ public class PlayerCreator : MonoBehaviour {
 
                     // icons[i].gameObject.SetActive(true);
 
-                }
-
-                if (Input.GetKeyDown(KeyCode.Joystick2Button3))
-                {
-                    
                 }
 
 
