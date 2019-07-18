@@ -2,21 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 public class NPC : MonoBehaviour {
     public static int maxAilments = 3;
     public NPCDisplay display;
     public Sprite[] possibleAilments;
     public Image[] displaySlots = new Image[maxAilments];
     public string[] ailments = new string[maxAilments];
-
-    public TextMeshProUGUI deathScore;
-    public int deaths;
-
-
-
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start () {
 
         if (gameObject.GetComponent<ParticleSystem>())
         {
@@ -56,8 +49,6 @@ public class NPC : MonoBehaviour {
 	void Update () {
         if (display.bar.fillAmount <= 0)
         {
-
-            deathScore.text = "" + (int.Parse(deathScore.text) + 1);
             Destroy(display.gameObject);
             Destroy(gameObject);
 
